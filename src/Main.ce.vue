@@ -2,7 +2,7 @@
 import App from "./App.vue";
 import { defineCustomElement, createApp, h, getCurrentInstance } from "vue";
 
-import { plugin as formkit } from "@formkit/vue";
+import { plugin as formkit, FormKitRoot } from "@formkit/vue";
 import { formkitConfig } from "./formkit.config";
 
 import styles from "./assets/style.css?inline";
@@ -31,7 +31,7 @@ export default defineCustomElement({
     }
   },
   render() {
-    return h(App);
+    return h(FormKitRoot, h(App));
   },
 });
 </script>
